@@ -1,33 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Github Page</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Sarah Marquardt</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- D3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="http://d3js.org/queue.v1.min.js"></script>
+  <script src="http://d3js.org/topojson.v1.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 </head>
-<body>
-    
-<h1>Sarah</h1>
-<img src="data:image/png;base64,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" alt="The stick figure version of me">
-<p>26.</p>
 
-<p>Living in Austin.</p>
+<body id="page-top">
 
-<p>Learning data analysis and visualization.</p>
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="">Explore our Site</a>
+      </li>
+      <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#about">About</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#skills">Skills</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#projects">Projects</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="viz.html">Visualizations</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
 
-<ul>
-  <a href = "www.github.com/smarquardt92">My github page</a>
-  <br>
-  <a href="www.facebook.com">My facebook (actually just the facebook homepage</a>
-</ul>
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <br><br><br><br><br><br><br>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About Me</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
 
-<table border="1">
-  <tr>
-    <th>Favorite Things and Such</th>
-  </tr>
-    <tr></tr>
+<!-- About -->
+<section class="content-section bg-primary text-white text-center" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <h2 class="mb-5">About the Wines</h2><br>
+      </div>
+    <div class="row">
+        <p>Our database came from a webscrape of Wine Magazine's website. The database included <br>
+          hundreds of thousands of wines from around the world, but we chose to focus on US based wines.<br></p>
+        </div>
+        </div>
+        </section>
 
+
+
+  <!-- Skills -->
+  <section class="content-section bg-primary text-white text-center" id="skills">
+    <div class="container text-center">
+      <div class="row">
+            <h2 class="mb-5">Skills</h2>
+
+      </div>
+   </div>
+  
+  </section>
+
+    <!-- Projects -->
+
+  <section class="content-section" id="projects">
+      <div class="container text-center ">
+        <div class="content-section-heading text-center">
+          <h2 class="mb-5">Projects</h2>
+          <h3 class="text-secondary mb-0">---</h3>
+          <div class="row">
+              <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Austin Traffic Trends</h5>
+                            <img class="card-img-top" src="img/heatmap_screenshot.png" alt="Card image cap">
+                            <p class="card-text">An analysis of time-based trends on traffic in the greater Austin area over the past year.</p>
+                            <p class="card-text" id="tech_used">
+                            Tech used: 
+                            Python libraries; Pandas, Matplotlib, Numpy, Gmaps, Seaborn
+                            Jupyter Notebook,
+                            Github
+                            </p>
+                            <a href="https://github.com/smarquardt92/project_1" class="btn btn-primary">Check it out</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-xs-8 col-sm-6 col-md-4 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Contacts -->
+  <section id="contact">
+    <div class="container">
+        <h2 class="mb-4 text-white" >Contact Me</h2><br>
+    </div>
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2019</p>
+    </div>
+  </footer>
+  </section>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script
 
 </body>
+
 </html>
