@@ -18,9 +18,32 @@ body {
   padding: 1.25rem 2.5rem;
 }
 
+/* Background Section */
+
+#about  {
+  background: #454b66 !important;
+  padding: 2px;
+}
+
+#about-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30pt;
+}
+#prof-card  {
+  padding-top: 0px !important;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  background: transparent;
+}
+#background {
+  padding-top: 80px !important;
+  padding-left: 50px !important;
+}
 
 .content-section {
-  padding-top: 5rem;
+  padding-top: 2rem;
   padding-bottom: 5rem;
   align-content: center !important;
 }
@@ -30,18 +53,53 @@ body {
 }
 
 .content-section-heading h3 {
-  font-size: 1rem;
+  font-size: 3rem;
   text-transform: uppercase;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
+
+/* .row {
+  padding-bottom: 30px;
+} */
 
 #tech_used  {
   font-size: 10pt !important;
 }
 
+/* HEADINGS */
+.secondary {
+  font-size: 12pt !important;
+  padding-bottom: 10pt;
+
+}
+
+.mb-1 {
+  color: #f1e8e7 !important; 
+  padding-bottom: 5px;
+}
+
+.mb-2 {
+  color: #677db7 !important;
+}
+
+.mb-3 {
+  color: #454b66 !important;
+}
+
+.mb-4 {
+  color: #b5bd89 !important;
+}
+
 .mb-5 {
   color: #9ca3db !important;
 }
+
+.mb-6 {
+  color: #729ea1 !important;
+}
+
+
 
 h1,
 h2,
@@ -56,21 +114,7 @@ h6 {
   color: rgba(255, 255, 255, 0.7);
 }
 
-
-/* Map */
-.map {
-  height: 30rem;
-}
-
-@media (max-width: 992px) {
-  .map {
-    height: 75%;
-  }
-}
-
-.map iframe {
-  pointer-events: none;
-}
+/* Scroll to Top Button */
 
 .scroll-to-top {
   position: fixed;
@@ -80,13 +124,13 @@ h6 {
   width: 50px;
   height: 50px;
   text-align: center;
-  color: white;
+  color: #f1e8e7;
   background: rgba(52, 58, 64, 0.5);
   line-height: 45px;
 }
 
 .scroll-to-top:focus, .scroll-to-top:hover {
-  color: white;
+  color: #f1e8e7;
 }
 
 .scroll-to-top:hover {
@@ -103,7 +147,7 @@ h6 {
   display: table;
   width: 100%;
   height: auto;
-  padding-top: 8rem;
+  padding-top: 6rem;
   padding-bottom: 8rem;
   background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.1))), url("../img/inverse_heatmap.jpg");
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/inverse_heatmap.jpg");
@@ -113,33 +157,41 @@ h6 {
 }
 
 .masthead h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin: 0;
-  padding: 0;
-  color: whitesmoke;
+  padding-bottom: 15px;
+  color: f1e8e7;
 }
 
+.masthead h2   {
+  font-size: 1.8rem;
+  color: f1e8e7;
+  padding-top: 15px;
+}
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
   }
-  .masthead h1 {
-    font-size: 5.5rem;
-  }
-}
-
-#about  {
-  background: #454b66 !important;
 }
 
 #skills {
-  background: #729ea1 !important;
+  background: white !important;
+}
+
+.col-xs-8 {
+  padding-bottom: 10px !important;
+}
+
+.col-xs-12 {
+  padding-bottom: 10px !important;
 }
 
 #projects   {
-  background: #677db7 !important;
+  background: #729ea1 !important;
 }
-/* Side Menu */
+
+/* NAVBAR */
+
 #sidebar-wrapper {
   position: fixed;
   z-index: 2;
@@ -255,36 +307,6 @@ h6 {
   max-width: 30rem;
 }
 
-#search {
-  background: #2c2538 !important;
-}
-
-#tips {
-  background: #9c7b76;
-}
-
-#submit {
-  background: #f1e8e7;
-}
-.tips {
-  text-align: left;
-}
-
-.thread-dark  {
-  background: #2c2538 !important;
-}
-
-#scrape_search  {
-  background: #d9948f;
-}
-
-.thead-dark {
-  background-color: #2c2538 !important;
-}
-
-#scrape_search  {
-  padding-left: 50px;
-}
 .portfolio-item {
   display: block;
   position: relative;
@@ -361,26 +383,26 @@ footer.footer {
   padding-bottom: 5rem;
 }
 
-footer.footer .social-link {
+.social-link {
   display: block;
   height: 4rem;
   width: 4rem;
   line-height: 4.3rem;
   font-size: 1.5rem;
-  background-color: #9C7B76;
+  background-color: #729ea1;
   -webkit-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.15s ease-in-out;
   -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-footer.footer .social-link:hover {
+.social-link:hover {
   background-color: #155d74;
   text-decoration: none;
 }
 
 a {
-  color: #9C7B76;
+  color: #729ea1;
 }
 
 a:hover, a:focus, a:active {
